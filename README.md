@@ -38,7 +38,8 @@ try {
 } catch (error) {
   console.error(error);
 }
-  Response example
+
+ ### Response example
 
 {
   "results": [
