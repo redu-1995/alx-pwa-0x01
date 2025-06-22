@@ -39,8 +39,11 @@ try {
   console.error(error);
 }
 
- ### Response example
+```
 
+
+### Response example
+```
 {
   "results": [
     {
@@ -56,7 +59,7 @@ try {
   "page": 1,
   "next": "/titles/search/title/{title}?page=2"
 }
-
+```
 
  ## Authentication
 
