@@ -9,32 +9,34 @@ The **MoviesDatabase API** provides a collection of information for movies, tv-s
    ##API Version:
   **API Version**: v1
 
-  ## Available Endpoints
-  1,/titles/search/keyword/{keyword} ---- returns array of titles according to filters / sorting query parameters provided and the keyword provided in path.
-  2,/titles/search/title/{title} ------returns array of titles according to filters / sorting query parameters provided and the title provided in path.
-  3, /actors/{id} ----- returs array of title types
-  4, /title/utils/titleType -----returs array of title types
+ ## Available Endpoints
+
+1. `/titles/search/keyword/{keyword}` – Returns an array of titles based on keyword and query parameters.
+2. `/titles/search/title/{title}` – Returns an array of titles by title and filters.
+3. `/actors/{id}` – Returns detailed info about an actor.
+4. `/title/utils/titleType` – Returns available title types.
+
 
   ## Request and Response Format
   
-  To search for a title:
+### Request Example
 
-```http
-const url = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D?exact=true&titleType=movie';
+```js
+const url = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/{title}?exact=true&titleType=movie';
 const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': 'b3e51a2006msh2ee698ac725e36bp18b62fjsn02a758d172ee',
-		'x-rapidapi-host': 'moviesdatabase.p.rapidapi.com'
-	}
+  method: 'GET',
+  headers: {
+    'x-rapidapi-key': 'YOUR_API_KEY',
+    'x-rapidapi-host': 'moviesdatabase.p.rapidapi.com'
+  }
 };
 
 try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
+  const response = await fetch(url, options);
+  const result = await response.json();
+  console.log(result);
 } catch (error) {
-	console.error(error);
+  console.error(error);
 }
   Response example
 
@@ -42,32 +44,18 @@ try {
   "results": [
     {
       "id": "tt0848228",
-      "titleText": {
-        "text": "The Avengers"
-      },
-      "originalTitleText": {
-        "text": "The Avengers"
-      },
-      "releaseYear": {
-        "year": 2012
-      },
+      "titleText": { "text": "The Avengers" },
+      "releaseYear": { "year": 2012 },
       "primaryImage": {
-        "url": "https://m.media-amazon.com/images/M/MV5BMjAxNjYxMzY4MF5BMl5BanBnXkFtZTcwODc2NjY0Nw@@._V1_.jpg"
+        "url": "https://m.media-amazon.com/..."
       },
-      "releaseDate": {
-        "day": 4,
-        "month": 5,
-        "year": 2012
-      },
-      "titleType": {
-        "text": "movie",
-        "id": "movie"
-      }
+      ...
     }
   ],
   "page": 1,
-  "next": "/titles/search/title/{title}?exact=true&page=2&titleType=movie"
+  "next": "/titles/search/title/{title}?page=2"
 }
+
 
  ## Authentication
 
