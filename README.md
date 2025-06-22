@@ -16,6 +16,7 @@ The **MoviesDatabase API** provides a collection of information for movies, tv-s
   4, /title/utils/titleType -----returs array of title types
 
   ## Request and Response Format
+  
   To search for a title:
 
 ```http
@@ -69,6 +70,7 @@ try {
 }
 
  ## Authentication
+
 The API requires authentication via RapidAPI headers:
 
 X-RapidAPI-Key: Your personal API key from RapidAPI.
