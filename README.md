@@ -19,7 +19,7 @@ The **MoviesDatabase API** provides a collection of information for movies, tv-s
   To search for a title:
 
 ```http
-Const url = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D?exact=true&titleType=movie';
+const url = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D?exact=true&titleType=movie';
 const options = {
 	method: 'GET',
 	headers: {
@@ -35,7 +35,6 @@ try {
 } catch (error) {
 	console.error(error);
 }
-
   Response example
 
 {
